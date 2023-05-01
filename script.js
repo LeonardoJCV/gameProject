@@ -27,7 +27,7 @@ const loop = setInterval(() => {
         clouds.style.animation = 'none';
         clouds.style.bottom = `${cloudsPosition}px`;
 
-        mario.src = './Imagens/mario-dead.png';
+        mario.src = 'mario-dead.png';
         mario.style.width = '75px'
         mario.style.marginLeft = '50px'
 
