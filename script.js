@@ -1,6 +1,8 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const clouds = document.querySelector('.clouds');
+const score = document.querySelector('.score');
+let count = 0;
 
 const jump = () => {
     mario.classList.add('jump');
@@ -31,8 +33,15 @@ const loop = setInterval(() => {
         mario.style.width = '75px'
         mario.style.marginLeft = '50px'
 
+        alert(`GameOver! sua pontuação foi de: ${count}`);
+        count = 0;
+
         clearInterval(loop);
     }
+
+    count++;
+    score.innerHTML = `Pontuação: ${count}`;
+
 }, 10);
 
-document.addEventListener('keydown', jump);
+document.addEventListener('keypress', jump);
