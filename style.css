@@ -13,6 +13,11 @@
     overflow: hidden;
     background: linear-gradient(#86dbff, #ffffff);
 }
+.score {
+    position: absolute;
+    left: 50%;
+    font-size: 30px;
+}
 .pipe {
     position: absolute;
     bottom: 0;
