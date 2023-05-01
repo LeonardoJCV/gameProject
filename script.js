@@ -44,4 +44,26 @@ const loop = setInterval(() => {
 
 }, 10);
 
+class EditorViewController: UIViewController {
+    ...
+
+    override func pressesBegan(_ presses: Set<UIPress>,
+                               with event: UIPressesEvent?) {
+        super.pressesBegan(presses, with: event)
+        presses.first?.key.map(keyPressed)
+    }
+
+    override func pressesEnded(_ presses: Set<UIPress>,
+                               with event: UIPressesEvent?) {
+        super.pressesEnded(presses, with: event)
+        presses.first?.key.map(keyReleased)
+    }
+
+    override func pressesCancelled(_ presses: Set<UIPress>,
+                                   with event: UIPressesEvent?) {
+        super.pressesCancelled(presses, with: event)
+        presses.first?.key.map(keyReleased)
+    }
+}
+
 document.addEventListener('keypress', jump);
